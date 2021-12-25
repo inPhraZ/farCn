@@ -33,6 +33,7 @@
 #define     C_INLINE    "inline"
 #define     C_INT       "int"
 #define     C_LONG      "long"
+#define     C_MAIN      "main"
 #define     C_REGISTER  "register"
 #define     C_RESTRICT  "restrict"
 #define     C_RETURN    "return"

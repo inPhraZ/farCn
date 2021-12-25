@@ -23,6 +23,7 @@
 "andazeye"              { FARCN_REPLACE(C_SIZEOF);  }
 "anjam bede"            { FARCN_REPLACE(C_DO);      }
 "anjoman"               { FARCN_REPLACE(C_UNION);   }
+"asli"                  { FARCN_REPLACE(C_MAIN);    }
 "baraye"                { FARCN_REPLACE(C_FOR);     }
 "bargasht"              { FARCN_REPLACE(C_RETURN);  }
 "beshkan"               { FARCN_REPLACE(C_BREAK);   }
