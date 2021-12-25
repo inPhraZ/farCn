@@ -1,5 +1,13 @@
 %option noyywrap
 
+%{
+#include <stdio.h>
+#include "keywords.h"
+
+#define     FARCN_REPLACE(C_Token)  \
+    do { fprintf(yyout, C_Token); } while(0)
+%}
+
 %%
 
  /* Keywords for farCn */
