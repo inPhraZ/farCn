@@ -12,7 +12,6 @@
 
  /* Keywords for farCn */
 "agar"
-"joz in agar"
 "alamatdar"
 "andazeye"
 "anjam bede"
@@ -28,6 +27,7 @@
 "farrar"
 "gozine"
 "ista"
+"joz in agar"
 "joz in"
 "khatti"
 "khodkar"
