@@ -12,7 +12,7 @@
 
  /* Keywords for farCn */
 "agar"
-"agar joz in"
+"joz in agar"
 "alamatdar"
 "andazeye"
 "anjam bede"
