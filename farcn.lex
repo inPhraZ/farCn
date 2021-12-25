@@ -2,10 +2,17 @@
 
 %{
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "keywords.h"
 
 #define     FARCN_REPLACE(C_Token)  \
     do { fprintf(yyout, C_Token); } while(0)
+
+#ifndef     NAME_MAX
+#define     NAME_MAX    255
+#endif
+
 %}
 
 %%
@@ -53,8 +60,50 @@
 
 %%
 
+int yyopen_files(const char *inf, const char *ouf)
+{
+    yyin = fopen(inf, "r");
+    if (!yyin) {
+        perror(inf);
+        return 1;
+    }
+
+    yyout = fopen(ouf, "w");
+    if (!yyout) {
+        perror(ouf);
+        return 1;
+    }
+    return 0;
+}
+
 int main(int argc, char **argv)
 {
+    
+    if (!argv[1]) {
+        printf("Usage: %s  [input file]\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    char *index;
+    char *inf = argv[1];
+    index = strstr(inf, ".farcn");
+    if (!index) {
+        fprintf(stderr, "file format not recognized\n");
+        exit(EXIT_FAILURE);
+    }
+
+    char *ouf = (char *)malloc(NAME_MAX);
+    if (!ouf) {
+        perror("malloc");
+        exit(EXIT_FAILURE);
+    }
+    memset(ouf, 0, NAME_MAX);
+    memmove(ouf, inf, index - inf);
+    strncat(ouf, ".c", 3);
+
+    if (yyopen_files(inf, ouf))
+        exit(EXIT_FAILURE);
+
     yylex();
     return 0;
 }
