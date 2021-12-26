@@ -41,9 +41,9 @@
 "khodkar"               { FARCN_REPLACE(C_AUTO);    }
 "kootah"                { FARCN_REPLACE(C_SHORT);   }
 "madamike"              { FARCN_REPLACE(C_WHILE);   }
-"mahdood"               { FARCN_REPLACE(C_RESTRICT);}
+"monhaser"              { FARCN_REPLACE(C_RESTRICT);}
 "mored"                 { FARCN_REPLACE(C_CASE);    }
-"payan"                 { FARCN_REPLACE(C_CONST);   }
+"payani"                { FARCN_REPLACE(C_CONST);   }
 "pishfarz"              { FARCN_REPLACE(C_DEFAULT); }
 "sabbat"                { FARCN_REPLACE(C_REGISTER);}
 "sahih"                 { FARCN_REPLACE(C_INT);     }
