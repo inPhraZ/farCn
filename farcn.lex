@@ -59,6 +59,9 @@
 "shamelkon"             { FARCN_REPLACE(C_INCLUDE); }
 "taarif"                { FARCN_REPLACE(C_DEFINE);  }
 
+ /* Identifier */
+[_a-zA-Z][_0-9a-zA-Z]+  { FARCN_REPLACE(yytext);    }
+
 %%
 
 int yyopen_files(const char *inf, const char *ouf)
