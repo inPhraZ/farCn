@@ -1,0 +1,30 @@
+// baraye nemoone
+
+#shamelkon <stdio.h>
+
+/* In tabe migooyad adad aval ast ya kheir.
+*  agar 0 bargardad aval nist.
+*  agar 1 bargardad aval ast. */
+sahih aval_ast(payani sahih adad)
+{
+    sahih i;
+    baraye (i = 2; i < adad; ++i) {
+        agar (adad % i == 0)
+            bargard 0;
+    }
+    bargard 1;
+}
+
+tohi asli(sahih argc, char **argv)
+{
+    sahih adad;
+    anjam bede {
+        printf("Lotfan adadi bozorgtar az 1 vared kon: ");
+        scanf("%d", &adad);
+    } madamike(adad <= 1);
+
+    agar (aval_ast(adad))
+        printf("%d adadi aval ast\n", adad);
+    joz in
+        printf("%d adadi aval nist\n", adad);
+}
