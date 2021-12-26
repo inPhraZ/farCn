@@ -62,6 +62,10 @@
  /* Identifier */
 [_a-zA-Z][_0-9a-zA-Z]+  { FARCN_REPLACE(yytext);    }
 
+ /* Don't change comments */
+\/\/(.*)                { FARCN_REPLACE(yytext);    }   // single line
+\/\*(.*\n)*.*\*\/       { FARCN_REPLACE(yytext);    }   // multiline
+
 %%
 
 int yyopen_files(const char *inf, const char *ouf)
