@@ -1,5 +1,5 @@
 # farCn (فارسین)
-C, But Persian keywords are also available.
+C, But Persian keywords can also be used.
 
 
 farCn is just a lexical analyzer that converts farCn to C, and does not involve a parser.
