@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "keywords.h"
+#include "tokens.h"
 
 #define     FARCN_REPLACE(C_Token)  \
     do { fprintf(yyout, C_Token); } while(0)
