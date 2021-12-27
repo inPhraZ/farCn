@@ -1,16 +1,15 @@
 /*
  * =====================================================================================
  *
- *       Filename:  keywords.h
- *       Version:   1.0
+ *       Filename:  tokens.h
  *       Created:   12/25/2021 09:21:10 PM
  *       Author:    Farzin
  *
  * =====================================================================================
  */
 
-#ifndef     __FARCN_KEYWORDS_H_
-#define     __FARCN_KEYWORDS_H_
+#ifndef     __FARCN_TOKENS_H_
+#define     __FARCN_TOKENS_H_
 
 // C keywords
 #define     C_AUTO      "auto"
@@ -55,4 +54,4 @@
 #define     C_ENDIF     "endif"
 #define     C_INCLUDE   "include"
 
-#endif      /*  __FARCN_KEYWORDS_H_ */
+#endif      /*  __FARCN_TOKENS_H_ */
