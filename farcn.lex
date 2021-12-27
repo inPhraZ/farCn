@@ -111,6 +111,7 @@ int main(int argc, char **argv)
 
     if (yyopen_files(inf, ouf))
         exit(EXIT_FAILURE);
+    free(ouf);
 
     yylex();
     return 0;
