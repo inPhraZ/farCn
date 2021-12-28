@@ -5,13 +5,7 @@
 #include <stdlib.h>
 
 #include "tokens.h"
-
-#define     FARCN_REPLACE(C_Token)  \
-    do { fprintf(yyout, C_Token); } while(0)
-
-#ifndef     NAME_MAX
-#define     NAME_MAX    255
-#endif
+#include "farcn.h"
 
 %}
 
@@ -68,6 +62,11 @@
 
 %%
 
+int main(int argc, char **argv)
+{
+    return 0;
+}
+#if 0
 int yyopen_files(const char *inf, const char *ouf)
 {
     yyin = fopen(inf, "r");
@@ -116,3 +115,5 @@ int main(int argc, char **argv)
     yylex();
     return 0;
 }
+
+#endif
