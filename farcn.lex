@@ -1,12 +1,8 @@
 %option noyywrap
 
 %{
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "tokens.h"
 #include "farcn.h"
-
 %}
 
 %%
@@ -64,8 +60,9 @@
 
 int main(int argc, char **argv)
 {
-    return 0;
+    return farcn_main(argc, argv);
 }
+
 #if 0
 int yyopen_files(const char *inf, const char *ouf)
 {
