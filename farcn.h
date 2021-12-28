@@ -24,6 +24,9 @@ extern FILE *yyin;
 // lex output fileptr
 extern FILE *yyout;
 
+// lex routine
+extern int yylex();
+
 extern int farcn_main(int argc, char **argv);
 
 #endif      /*  __FARCN_LAN_H_ */
