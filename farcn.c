@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <regex.h>
 
 #include "farcn.h"
@@ -62,6 +63,33 @@ static char *farcn_get_ouf_name(const char *inf, const FTYPE ftype)
 // open inf as yyin and ouf as yyout
 static int farcn_yyopen_files(const char *inf, const char *ouf)
 {
+    char response[32];
+
+    if (access(inf, F_OK) == -1) {
+        perror(inf);
+        return -1;
+    }
+
+    if (access(ouf, F_OK) == 0) {
+        // don't overwrite existing file
+        fprintf(stderr, "Warning: %s allready exist\n", ouf);
+        return -1;
+    }
+
+    // open inf as yyin
+    yyin = fopen(inf, "r");
+    if (!yyin) {
+        perror(inf);
+        return -1;
+    }
+
+    // open ouf as yyout
+    yyout = fopen(ouf, "w");
+    if (!yyout) {
+        perror(ouf);
+        return -1;
+    }
+
     return 0;
 }
 
@@ -94,7 +122,12 @@ int farcn_main(int argc, char **argv)
             continue;
         }
         tmp_ouf = farcn_get_ouf_name(tmp_inf, ftype);
-        // do things
+        printf("Converting %s to %s\n", tmp_inf, tmp_ouf);
+        if (farcn_yyopen_files(tmp_inf, tmp_ouf) != -1) {
+            yylex();
+            fclose(yyin);
+            fclose(yyout);
+        }
         free(tmp_ouf);
     }
 
