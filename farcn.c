@@ -8,6 +8,7 @@
  */
 
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #include <regex.h>
 
@@ -35,12 +36,28 @@ static int farcn_get_extension(const char *str)
     return INVALID_FILE;
 }
 
-#if 0
-static char *farcn_get_ouf_name(const char *inf)
+static char *farcn_get_ouf_name(const char *inf, const FTYPE ftype)
 {
+    char *ouf, *ext;
+    if (!inf)
+        return NULL;
 
+    size_t infs = strnlen(inf, NAME_MAX);
+    ext = strrchr(inf, '.');
+    ouf = (char *)malloc(infs);
+    if (!ouf || !ext)
+        return NULL;
+
+    memset(ouf, 0, infs);
+    memmove(ouf, inf, ext - inf);
+    if (ftype == SOURCE_FILE)
+        strncat(ouf, ".c", 3);
+    else if (ftype == HEADER_FILE)
+        strncat(ouf, ".h", 3);
+    else
+        return NULL;
+    return ouf;
 }
-#endif
 
 // open inf as yyin and ouf as yyout
 static int farcn_yyopen_files(const char *inf, const char *ouf)
@@ -72,15 +89,13 @@ int farcn_main(int argc, char **argv)
     for (i = 1; i < argc; ++i) {
         tmp_inf = argv[i];
         ftype = farcn_get_extension(tmp_inf);
-        if (ftype == INVALID_FILE)
+        if (ftype == INVALID_FILE) {
             fprintf(stderr, "%s: file format not recognized\n", tmp_inf);
-#if 0
-        if (is_valid_ext(tmp_inf)) {
-            tmp_ouf = farcn_get_ouf_name(tmp_inf);
-            if (farcn_yyopen_files(tmp_inf, tmp_ouf))
-                yylex();
+            continue;
         }
-#endif
+        tmp_ouf = farcn_get_ouf_name(tmp_inf, ftype);
+        // do things
+        free(tmp_ouf);
     }
 
     return EXIT_SUCCESS;
