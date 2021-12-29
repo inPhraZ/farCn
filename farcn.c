@@ -13,10 +13,11 @@
 
 #include "farcn.h"
 
+// regex for valid filename extensions
 static const char *farcn_reg_valid_ext = ".*[.](c|h|farcn|farhn)$";
 static regex_t     farcn_reg_t;
 
-// check if a filename extension is valid
+// Check if a filename extension is valid
 static int is_valid_ext(const char *str)
 {
     if (regexec(&farcn_reg_t, str, 0, NULL, 0))
@@ -28,16 +29,19 @@ int farcn_main(int argc, char **argv)
 {
     int i;
 
+    // Mising source files
     if (argc < 2) {
         fprintf(stderr, "Usage: %s  [FILE(s)]\n", argv[0]);
         return EXIT_FAILURE;
     }
 
+    // Initializing farcn_reg_t
     if (regcomp(&farcn_reg_t, farcn_reg_valid_ext, REG_EXTENDED)) {
         fprintf(stderr, "Inner error\n");
         return EXIT_FAILURE;
     }
 
+    // Loop through input files
     for (i = 1; i < argc; ++i) {
         if (is_valid_ext(argv[i])) {
             printf("%s has valid extension\n", argv[i]);
@@ -45,5 +49,6 @@ int farcn_main(int argc, char **argv)
         }
         fprintf(stderr, "%s: file format not recognized\n", argv[i]);
     }
+
     return EXIT_SUCCESS;
 }
