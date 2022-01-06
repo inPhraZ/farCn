@@ -48,6 +48,7 @@
 "payan agar"            { FARCN_REPLACE(C_ENDIF);   }
 "shamelkon"             { FARCN_REPLACE(C_INCLUDE); }
 "taarif"                { FARCN_REPLACE(C_DEFINE);  }
+"taarifshode"           { FARCN_REPLACE(C_DEFINED); }
 
  /* Identifier */
 [_a-zA-Z][_0-9a-zA-Z]+  { FARCN_REPLACE(yytext);    }

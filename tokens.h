@@ -51,6 +51,7 @@
 
 // PreProcessors
 #define     C_DEFINE    "define"
+#define     C_DEFINED   "defined"
 #define     C_ENDIF     "endif"
 #define     C_INCLUDE   "include"
 
