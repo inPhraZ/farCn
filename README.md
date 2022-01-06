@@ -48,3 +48,4 @@ while | madamike
 endif | payan agar
 include | shamelkon
 define | taarif
+defined | taarifshode
