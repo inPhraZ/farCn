@@ -106,7 +106,7 @@ int farcn_main(int argc, char **argv)
         return EXIT_FAILURE;
     }
 
-    // Initializing farcn_reg_c
+    // Initializing regex_t
     if (regcomp(&farcn_reg_c, farcn_reg_valid_cext, REG_EXTENDED) ||
             regcomp(&farcn_reg_h, farcn_reg_valid_hext, REG_EXTENDED)) {
         fprintf(stderr, "Inner error\n");
