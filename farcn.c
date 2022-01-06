@@ -131,5 +131,9 @@ int farcn_main(int argc, char **argv)
         free(tmp_ouf);
     }
 
+    // Free regex_t
+    regfree(&farcn_reg_c);
+    regfree(&farcn_reg_h);
+
     return EXIT_SUCCESS;
 }
