@@ -19,7 +19,6 @@ default | pishfarz
 do | anjam bede
 double | do barabar
 else | joz in
-else if | joz in agar
 enum | shomaresh
 extern | birooni
 float | shenavar
