@@ -22,7 +22,6 @@
 #define     C_DO        "do"
 #define     C_DOUBLE    "double"
 #define     C_ELSE      "else"
-#define     C_ELSEIF    "else if"
 #define     C_ENUM      "enum"
 #define     C_EXTERN    "extern"
 #define     C_FLOAT     "float"
