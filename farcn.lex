@@ -25,7 +25,6 @@
 "farrar"                { FARCN_REPLACE(C_VOLATILE);}
 "gozine"                { FARCN_REPLACE(C_SWITCH);  }
 "ista"                  { FARCN_REPLACE(C_STATIC);  }
-"joz in agar"           { FARCN_REPLACE(C_ELSEIF);  }
 "joz in"                { FARCN_REPLACE(C_ELSE);    }
 "khatti"                { FARCN_REPLACE(C_INLINE);  }
 "khodkar"               { FARCN_REPLACE(C_AUTO);    }
