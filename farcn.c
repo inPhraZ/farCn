@@ -11,9 +11,12 @@
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <errno.h>
 #include <regex.h>
 
 #include "farcn.h"
+
+extern char *program_invocation_name;
 
 // regex for valid filename extensions
 static const char *farcn_reg_valid_cext = ".*[.](farcn)$";
@@ -102,7 +105,7 @@ int farcn_main(int argc, char **argv)
 
     // Mising source files
     if (argc < 2) {
-        fprintf(stderr, "Usage: %s  [FILE(s)]\n", argv[0]);
+        fprintf(stderr, "Usage: %s  [FILE(s)]\n", program_invocation_name);
         return EXIT_FAILURE;
     }
 
