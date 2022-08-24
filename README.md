@@ -27,7 +27,7 @@ goto | boro be
 if | agar
 inline | khatti
 int | sahih
-long | toolani
+long | boland
 main | asli
 register | sabbat
 restrict | monhaser
