@@ -20,6 +20,7 @@
 "bi alamat"             { FARCN_REPLACE(C_UNSIGNED);}
 "birooni"               { FARCN_REPLACE(C_EXTERN);  }
 "boro be"               { FARCN_REPLACE(C_GOTO);    }
+"boland"                { FARCN_REPLACE(C_LONG);    }
 "do barabar"            { FARCN_REPLACE(C_DOUBLE);  }
 "edame bede"            { FARCN_REPLACE(C_CONTINUE);}
 "farrar"                { FARCN_REPLACE(C_VOLATILE);}
@@ -41,7 +42,6 @@
 "shomaresh"             { FARCN_REPLACE(C_ENUM);    }
 "taarif kon"            { FARCN_REPLACE(C_TYPEDEF); }
 "tohi"                  { FARCN_REPLACE(C_VOID);    }
-"toolani"               { FARCN_REPLACE(C_LONG);    }
 
  /* PreProcessors */
 "payan agar"            { FARCN_REPLACE(C_ENDIF);   }
